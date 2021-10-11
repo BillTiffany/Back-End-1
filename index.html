@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Web Development</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="stylish.css"/>
+  </head>
+  <body class="container">
+      <section class='request-type'>
+          <select id='params-input'>
+              <option value='0'>0</option>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
+              <option value='3'>3</option>
+              <option value='4'>4</option>
+              <option value='5'>5</option>
+              <option value='6'>6</option>
+              <option value='7'>7</option>
+              <option value='8'>8</option>
+              <option value='9'>9</option>
+          </select>
+          <button id='getParamsSubmit'>Submit</button>
+      </section>
+      <section class='request-type'>
+          <p class='request-descriptor'>get request: using query get inventory that matches query string</p>
+          <h4>Inventory Name Search</h4>
+          <input type='text' id='query-input' />
+          <button id='getQuerySubmit'>Submit</button>
+      </section>
+  </section>
+  <section class='response-area'>
+      <ol>
+          <li>Choose an option above</li>
+          <li>Click 'Submit'</li>
+          <li>Server response content will show here!</li>
+      </ol>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+    <h1>Friends</h1>
+    <ul id="people" class=""></ul>
+
+    <button id="button">GET Friends List</button>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById("button").onclick = function () {
+        axios
+          .get("http://localhost:4000/api/users")
+          .then(function (response) {
+            const data = response.data;
+            document.getElementById("people").innerHTML = data
+              .map(function (person) {
+                return '<li class="row">' + person;
+              })
+              .join("");
+          })
+          .catch(function (err) {
+            document.getElementById("people").innerHTML =
+              '<li class="text-danger">' + err.message + "</li>";
+          });
+      };
+    </script>
+  </body>
+</html>

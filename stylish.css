@@ -1,0 +1,30 @@
+#button {
+    border-radius: 20px;
+    background: rgb(195,41,11);
+background: linear-gradient(180deg, rgba(195,41,11,1) 30%, rgba(16,17,11,1) 75%);
+color: white;
+-webkit-box-shadow: 1px 6px 8px 4px rgba(0,0,0,0.97); 
+box-shadow: 1px 6px 8px 4px rgba(0,0,0,0.97);
+}
+
+#button:active {
+    transform: scale(.9,.9);
+}
+.container {
+    background-color: gray;
+}
+
+.people {
+    background-color: darkgray;
+}
+
+.row {
+    background-color: white;
+    background-size: contain;
+    max-width: 75px;
+}
+
+h1 {
+    color: red;
+    text-shadow: 2px 2px 15px #000000;
+}
